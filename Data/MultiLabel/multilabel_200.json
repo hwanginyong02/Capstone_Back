@@ -1,0 +1,1804 @@
+{
+  "samples": [
+    {
+      "id": "S001",
+      "true_labels": "sports|finance|news",
+      "pred_labels": "sports|news|finance",
+      "score_sports": 0.69,
+      "score_news": 0.94,
+      "score_finance": 0.99,
+      "score_tech": 0.34
+    },
+    {
+      "id": "S002",
+      "true_labels": "news|sports|tech",
+      "pred_labels": "news|sports",
+      "score_sports": 0.45,
+      "score_news": 0.62,
+      "score_finance": 0.61,
+      "score_tech": 0.2
+    },
+    {
+      "id": "S003",
+      "true_labels": "sports",
+      "pred_labels": "news|finance",
+      "score_sports": 0.45,
+      "score_news": 0.18,
+      "score_finance": 0.77,
+      "score_tech": 0.62
+    },
+    {
+      "id": "S004",
+      "true_labels": "finance",
+      "pred_labels": "sports",
+      "score_sports": 0.24,
+      "score_news": 0.35,
+      "score_finance": 0.08,
+      "score_tech": 0.91
+    },
+    {
+      "id": "S005",
+      "true_labels": "news|sports",
+      "pred_labels": "sports|finance|tech",
+      "score_sports": 0.65,
+      "score_news": 0.41,
+      "score_finance": 0.16,
+      "score_tech": 0.67
+    },
+    {
+      "id": "S006",
+      "true_labels": "tech",
+      "pred_labels": "finance",
+      "score_sports": 0.74,
+      "score_news": 0.96,
+      "score_finance": 0.62,
+      "score_tech": 0.31
+    },
+    {
+      "id": "S007",
+      "true_labels": "news|finance",
+      "pred_labels": "news",
+      "score_sports": 0.23,
+      "score_news": 0.74,
+      "score_finance": 0.79,
+      "score_tech": 0.51
+    },
+    {
+      "id": "S008",
+      "true_labels": "news|sports|finance",
+      "pred_labels": "tech",
+      "score_sports": 0.9,
+      "score_news": 0.12,
+      "score_finance": 0.3,
+      "score_tech": 0.18
+    },
+    {
+      "id": "S009",
+      "true_labels": "tech",
+      "pred_labels": "tech|sports|finance",
+      "score_sports": 0.79,
+      "score_news": 0.43,
+      "score_finance": 0.72,
+      "score_tech": 0.87
+    },
+    {
+      "id": "S010",
+      "true_labels": "finance|tech",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.97,
+      "score_news": 0.62,
+      "score_finance": 0.98,
+      "score_tech": 0.01
+    },
+    {
+      "id": "S011",
+      "true_labels": "sports|news|finance",
+      "pred_labels": "sports|tech",
+      "score_sports": 0.46,
+      "score_news": 0.5,
+      "score_finance": 0.44,
+      "score_tech": 0.31
+    },
+    {
+      "id": "S012",
+      "true_labels": "sports|tech",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.44,
+      "score_news": 0.75,
+      "score_finance": 0.47,
+      "score_tech": 0.3
+    },
+    {
+      "id": "S013",
+      "true_labels": "tech|news|finance",
+      "pred_labels": "sports|tech",
+      "score_sports": 0.97,
+      "score_news": 0.96,
+      "score_finance": 0.7,
+      "score_tech": 0.27
+    },
+    {
+      "id": "S014",
+      "true_labels": "sports|tech|finance",
+      "pred_labels": "finance|news|tech",
+      "score_sports": 0.45,
+      "score_news": 0.15,
+      "score_finance": 0.24,
+      "score_tech": 0.65
+    },
+    {
+      "id": "S015",
+      "true_labels": "news|finance",
+      "pred_labels": "news|finance",
+      "score_sports": 0.55,
+      "score_news": 0.74,
+      "score_finance": 0.43,
+      "score_tech": 0.38
+    },
+    {
+      "id": "S016",
+      "true_labels": "finance|news",
+      "pred_labels": "tech|finance|sports",
+      "score_sports": 0.71,
+      "score_news": 0.23,
+      "score_finance": 0.47,
+      "score_tech": 0.67
+    },
+    {
+      "id": "S017",
+      "true_labels": "news",
+      "pred_labels": "finance|news|tech",
+      "score_sports": 0.97,
+      "score_news": 0.0,
+      "score_finance": 0.47,
+      "score_tech": 0.45
+    },
+    {
+      "id": "S018",
+      "true_labels": "sports|tech|finance",
+      "pred_labels": "news|tech",
+      "score_sports": 0.18,
+      "score_news": 0.18,
+      "score_finance": 0.77,
+      "score_tech": 0.91
+    },
+    {
+      "id": "S019",
+      "true_labels": "news",
+      "pred_labels": "finance",
+      "score_sports": 0.78,
+      "score_news": 0.55,
+      "score_finance": 0.06,
+      "score_tech": 0.56
+    },
+    {
+      "id": "S020",
+      "true_labels": "finance|sports",
+      "pred_labels": "news",
+      "score_sports": 0.74,
+      "score_news": 0.44,
+      "score_finance": 0.65,
+      "score_tech": 0.89
+    },
+    {
+      "id": "S021",
+      "true_labels": "news|tech",
+      "pred_labels": "tech|finance",
+      "score_sports": 0.74,
+      "score_news": 0.62,
+      "score_finance": 0.06,
+      "score_tech": 0.15
+    },
+    {
+      "id": "S022",
+      "true_labels": "news|sports",
+      "pred_labels": "tech|sports|news",
+      "score_sports": 0.98,
+      "score_news": 0.13,
+      "score_finance": 0.19,
+      "score_tech": 0.02
+    },
+    {
+      "id": "S023",
+      "true_labels": "sports",
+      "pred_labels": "tech|finance|news",
+      "score_sports": 0.29,
+      "score_news": 0.93,
+      "score_finance": 0.32,
+      "score_tech": 0.39
+    },
+    {
+      "id": "S024",
+      "true_labels": "news|finance|sports",
+      "pred_labels": "sports",
+      "score_sports": 0.66,
+      "score_news": 0.52,
+      "score_finance": 0.19,
+      "score_tech": 0.86
+    },
+    {
+      "id": "S025",
+      "true_labels": "tech|news",
+      "pred_labels": "tech",
+      "score_sports": 0.32,
+      "score_news": 0.25,
+      "score_finance": 0.08,
+      "score_tech": 0.37
+    },
+    {
+      "id": "S026",
+      "true_labels": "finance",
+      "pred_labels": "tech",
+      "score_sports": 0.85,
+      "score_news": 0.71,
+      "score_finance": 0.02,
+      "score_tech": 0.61
+    },
+    {
+      "id": "S027",
+      "true_labels": "sports|finance|news",
+      "pred_labels": "finance|tech|sports",
+      "score_sports": 0.17,
+      "score_news": 0.2,
+      "score_finance": 0.77,
+      "score_tech": 0.86
+    },
+    {
+      "id": "S028",
+      "true_labels": "tech|sports",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.59,
+      "score_news": 0.28,
+      "score_finance": 0.48,
+      "score_tech": 0.7
+    },
+    {
+      "id": "S029",
+      "true_labels": "finance|tech|news",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.46,
+      "score_news": 0.52,
+      "score_finance": 0.65,
+      "score_tech": 0.14
+    },
+    {
+      "id": "S030",
+      "true_labels": "sports|finance",
+      "pred_labels": "tech|finance",
+      "score_sports": 0.49,
+      "score_news": 0.21,
+      "score_finance": 0.33,
+      "score_tech": 0.21
+    },
+    {
+      "id": "S031",
+      "true_labels": "news",
+      "pred_labels": "news|tech|sports",
+      "score_sports": 0.44,
+      "score_news": 0.92,
+      "score_finance": 0.51,
+      "score_tech": 0.38
+    },
+    {
+      "id": "S032",
+      "true_labels": "sports",
+      "pred_labels": "news",
+      "score_sports": 0.96,
+      "score_news": 0.67,
+      "score_finance": 0.25,
+      "score_tech": 0.86
+    },
+    {
+      "id": "S033",
+      "true_labels": "finance|sports",
+      "pred_labels": "tech|news|sports",
+      "score_sports": 0.54,
+      "score_news": 0.31,
+      "score_finance": 0.77,
+      "score_tech": 0.98
+    },
+    {
+      "id": "S034",
+      "true_labels": "news|finance|tech",
+      "pred_labels": "finance",
+      "score_sports": 0.23,
+      "score_news": 0.54,
+      "score_finance": 0.58,
+      "score_tech": 0.68
+    },
+    {
+      "id": "S035",
+      "true_labels": "tech",
+      "pred_labels": "finance|news|sports",
+      "score_sports": 0.02,
+      "score_news": 0.02,
+      "score_finance": 0.93,
+      "score_tech": 0.06
+    },
+    {
+      "id": "S036",
+      "true_labels": "news",
+      "pred_labels": "sports|tech|news",
+      "score_sports": 0.65,
+      "score_news": 0.88,
+      "score_finance": 0.24,
+      "score_tech": 0.75
+    },
+    {
+      "id": "S037",
+      "true_labels": "sports|tech",
+      "pred_labels": "news",
+      "score_sports": 0.48,
+      "score_news": 0.55,
+      "score_finance": 0.69,
+      "score_tech": 0.74
+    },
+    {
+      "id": "S038",
+      "true_labels": "tech|finance",
+      "pred_labels": "news|sports|tech",
+      "score_sports": 0.11,
+      "score_news": 0.06,
+      "score_finance": 0.74,
+      "score_tech": 0.85
+    },
+    {
+      "id": "S039",
+      "true_labels": "sports|tech|news",
+      "pred_labels": "news|finance|sports",
+      "score_sports": 0.25,
+      "score_news": 0.25,
+      "score_finance": 0.09,
+      "score_tech": 0.97
+    },
+    {
+      "id": "S040",
+      "true_labels": "finance|sports|tech",
+      "pred_labels": "sports",
+      "score_sports": 0.68,
+      "score_news": 0.37,
+      "score_finance": 0.36,
+      "score_tech": 0.88
+    },
+    {
+      "id": "S041",
+      "true_labels": "finance",
+      "pred_labels": "sports",
+      "score_sports": 0.7,
+      "score_news": 0.71,
+      "score_finance": 0.08,
+      "score_tech": 0.67
+    },
+    {
+      "id": "S042",
+      "true_labels": "tech|sports|news",
+      "pred_labels": "tech|finance",
+      "score_sports": 0.21,
+      "score_news": 0.44,
+      "score_finance": 0.04,
+      "score_tech": 0.78
+    },
+    {
+      "id": "S043",
+      "true_labels": "sports",
+      "pred_labels": "tech",
+      "score_sports": 0.39,
+      "score_news": 0.52,
+      "score_finance": 0.7,
+      "score_tech": 0.72
+    },
+    {
+      "id": "S044",
+      "true_labels": "news",
+      "pred_labels": "news|sports",
+      "score_sports": 0.95,
+      "score_news": 0.86,
+      "score_finance": 0.57,
+      "score_tech": 0.62
+    },
+    {
+      "id": "S045",
+      "true_labels": "finance|news|sports",
+      "pred_labels": "sports|tech",
+      "score_sports": 0.27,
+      "score_news": 0.5,
+      "score_finance": 0.26,
+      "score_tech": 0.67
+    },
+    {
+      "id": "S046",
+      "true_labels": "tech|news|sports",
+      "pred_labels": "tech",
+      "score_sports": 0.67,
+      "score_news": 0.78,
+      "score_finance": 0.99,
+      "score_tech": 0.91
+    },
+    {
+      "id": "S047",
+      "true_labels": "finance|tech|news",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.2,
+      "score_news": 0.22,
+      "score_finance": 0.65,
+      "score_tech": 0.31
+    },
+    {
+      "id": "S048",
+      "true_labels": "tech",
+      "pred_labels": "tech",
+      "score_sports": 0.4,
+      "score_news": 0.7,
+      "score_finance": 0.31,
+      "score_tech": 0.54
+    },
+    {
+      "id": "S049",
+      "true_labels": "finance|tech|sports",
+      "pred_labels": "sports|news|tech",
+      "score_sports": 0.14,
+      "score_news": 0.89,
+      "score_finance": 0.14,
+      "score_tech": 0.67
+    },
+    {
+      "id": "S050",
+      "true_labels": "sports|news",
+      "pred_labels": "news",
+      "score_sports": 0.09,
+      "score_news": 0.61,
+      "score_finance": 0.84,
+      "score_tech": 0.93
+    },
+    {
+      "id": "S051",
+      "true_labels": "news|tech",
+      "pred_labels": "tech|news|sports",
+      "score_sports": 0.25,
+      "score_news": 0.98,
+      "score_finance": 0.57,
+      "score_tech": 0.05
+    },
+    {
+      "id": "S052",
+      "true_labels": "tech|news|finance",
+      "pred_labels": "sports|news|tech",
+      "score_sports": 0.29,
+      "score_news": 0.67,
+      "score_finance": 0.22,
+      "score_tech": 0.07
+    },
+    {
+      "id": "S053",
+      "true_labels": "news",
+      "pred_labels": "finance|sports|news",
+      "score_sports": 0.18,
+      "score_news": 0.08,
+      "score_finance": 0.36,
+      "score_tech": 0.24
+    },
+    {
+      "id": "S054",
+      "true_labels": "tech|sports|finance",
+      "pred_labels": "sports|finance",
+      "score_sports": 0.22,
+      "score_news": 0.44,
+      "score_finance": 0.81,
+      "score_tech": 0.31
+    },
+    {
+      "id": "S055",
+      "true_labels": "news",
+      "pred_labels": "news|sports",
+      "score_sports": 0.86,
+      "score_news": 0.36,
+      "score_finance": 0.84,
+      "score_tech": 0.14
+    },
+    {
+      "id": "S056",
+      "true_labels": "sports|tech",
+      "pred_labels": "news|sports",
+      "score_sports": 0.81,
+      "score_news": 0.15,
+      "score_finance": 0.15,
+      "score_tech": 0.96
+    },
+    {
+      "id": "S057",
+      "true_labels": "sports|tech|finance",
+      "pred_labels": "tech",
+      "score_sports": 0.95,
+      "score_news": 0.67,
+      "score_finance": 0.95,
+      "score_tech": 0.77
+    },
+    {
+      "id": "S058",
+      "true_labels": "finance|sports|news",
+      "pred_labels": "sports|tech",
+      "score_sports": 0.85,
+      "score_news": 0.98,
+      "score_finance": 0.61,
+      "score_tech": 0.21
+    },
+    {
+      "id": "S059",
+      "true_labels": "tech|finance|news",
+      "pred_labels": "sports|finance|tech",
+      "score_sports": 0.17,
+      "score_news": 0.9,
+      "score_finance": 0.79,
+      "score_tech": 0.5
+    },
+    {
+      "id": "S060",
+      "true_labels": "news|tech",
+      "pred_labels": "tech|finance|news",
+      "score_sports": 0.72,
+      "score_news": 0.84,
+      "score_finance": 0.8,
+      "score_tech": 0.77
+    },
+    {
+      "id": "S061",
+      "true_labels": "tech|finance|news",
+      "pred_labels": "news",
+      "score_sports": 0.37,
+      "score_news": 0.72,
+      "score_finance": 0.2,
+      "score_tech": 0.5
+    },
+    {
+      "id": "S062",
+      "true_labels": "tech|sports|news",
+      "pred_labels": "news|sports",
+      "score_sports": 0.85,
+      "score_news": 0.12,
+      "score_finance": 0.55,
+      "score_tech": 0.38
+    },
+    {
+      "id": "S063",
+      "true_labels": "news",
+      "pred_labels": "sports",
+      "score_sports": 0.22,
+      "score_news": 0.78,
+      "score_finance": 0.64,
+      "score_tech": 0.81
+    },
+    {
+      "id": "S064",
+      "true_labels": "news|sports|tech",
+      "pred_labels": "finance|tech",
+      "score_sports": 0.75,
+      "score_news": 0.19,
+      "score_finance": 0.1,
+      "score_tech": 0.31
+    },
+    {
+      "id": "S065",
+      "true_labels": "tech|finance",
+      "pred_labels": "sports",
+      "score_sports": 0.33,
+      "score_news": 0.39,
+      "score_finance": 0.97,
+      "score_tech": 0.89
+    },
+    {
+      "id": "S066",
+      "true_labels": "finance|tech|news",
+      "pred_labels": "tech|news",
+      "score_sports": 0.15,
+      "score_news": 0.74,
+      "score_finance": 0.18,
+      "score_tech": 0.09
+    },
+    {
+      "id": "S067",
+      "true_labels": "sports|news",
+      "pred_labels": "sports",
+      "score_sports": 0.7,
+      "score_news": 0.83,
+      "score_finance": 0.91,
+      "score_tech": 0.99
+    },
+    {
+      "id": "S068",
+      "true_labels": "sports|tech|news",
+      "pred_labels": "finance|tech|news",
+      "score_sports": 0.57,
+      "score_news": 0.31,
+      "score_finance": 0.17,
+      "score_tech": 0.48
+    },
+    {
+      "id": "S069",
+      "true_labels": "sports|news|finance",
+      "pred_labels": "tech|sports",
+      "score_sports": 0.65,
+      "score_news": 0.54,
+      "score_finance": 0.36,
+      "score_tech": 0.09
+    },
+    {
+      "id": "S070",
+      "true_labels": "sports|finance",
+      "pred_labels": "sports",
+      "score_sports": 0.53,
+      "score_news": 0.9,
+      "score_finance": 0.95,
+      "score_tech": 0.69
+    },
+    {
+      "id": "S071",
+      "true_labels": "sports|tech",
+      "pred_labels": "finance|news",
+      "score_sports": 0.55,
+      "score_news": 0.27,
+      "score_finance": 0.18,
+      "score_tech": 0.19
+    },
+    {
+      "id": "S072",
+      "true_labels": "tech",
+      "pred_labels": "news|sports",
+      "score_sports": 0.17,
+      "score_news": 0.27,
+      "score_finance": 0.62,
+      "score_tech": 0.05
+    },
+    {
+      "id": "S073",
+      "true_labels": "finance|tech",
+      "pred_labels": "sports|tech|news",
+      "score_sports": 0.13,
+      "score_news": 0.63,
+      "score_finance": 0.69,
+      "score_tech": 0.37
+    },
+    {
+      "id": "S074",
+      "true_labels": "finance|tech|sports",
+      "pred_labels": "news",
+      "score_sports": 0.91,
+      "score_news": 0.33,
+      "score_finance": 0.19,
+      "score_tech": 0.7
+    },
+    {
+      "id": "S075",
+      "true_labels": "news|tech|finance",
+      "pred_labels": "news|tech|finance",
+      "score_sports": 0.76,
+      "score_news": 0.35,
+      "score_finance": 0.74,
+      "score_tech": 0.7
+    },
+    {
+      "id": "S076",
+      "true_labels": "tech|sports",
+      "pred_labels": "sports|news|tech",
+      "score_sports": 0.53,
+      "score_news": 0.29,
+      "score_finance": 0.92,
+      "score_tech": 0.49
+    },
+    {
+      "id": "S077",
+      "true_labels": "finance|sports",
+      "pred_labels": "news",
+      "score_sports": 0.96,
+      "score_news": 0.36,
+      "score_finance": 0.96,
+      "score_tech": 0.63
+    },
+    {
+      "id": "S078",
+      "true_labels": "sports|finance|tech",
+      "pred_labels": "sports|news",
+      "score_sports": 0.11,
+      "score_news": 0.93,
+      "score_finance": 0.65,
+      "score_tech": 0.05
+    },
+    {
+      "id": "S079",
+      "true_labels": "news|finance",
+      "pred_labels": "sports",
+      "score_sports": 0.99,
+      "score_news": 0.52,
+      "score_finance": 0.18,
+      "score_tech": 0.65
+    },
+    {
+      "id": "S080",
+      "true_labels": "news",
+      "pred_labels": "news",
+      "score_sports": 0.34,
+      "score_news": 0.54,
+      "score_finance": 0.82,
+      "score_tech": 0.24
+    },
+    {
+      "id": "S081",
+      "true_labels": "finance|sports",
+      "pred_labels": "sports|tech",
+      "score_sports": 0.43,
+      "score_news": 0.24,
+      "score_finance": 0.52,
+      "score_tech": 0.81
+    },
+    {
+      "id": "S082",
+      "true_labels": "sports|finance|tech",
+      "pred_labels": "sports",
+      "score_sports": 0.35,
+      "score_news": 0.68,
+      "score_finance": 0.75,
+      "score_tech": 0.44
+    },
+    {
+      "id": "S083",
+      "true_labels": "tech|news|sports",
+      "pred_labels": "news",
+      "score_sports": 0.07,
+      "score_news": 0.17,
+      "score_finance": 0.86,
+      "score_tech": 0.77
+    },
+    {
+      "id": "S084",
+      "true_labels": "news",
+      "pred_labels": "sports|news|tech",
+      "score_sports": 0.4,
+      "score_news": 0.78,
+      "score_finance": 0.89,
+      "score_tech": 0.48
+    },
+    {
+      "id": "S085",
+      "true_labels": "news",
+      "pred_labels": "tech|finance",
+      "score_sports": 0.96,
+      "score_news": 0.11,
+      "score_finance": 0.92,
+      "score_tech": 0.35
+    },
+    {
+      "id": "S086",
+      "true_labels": "tech",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.35,
+      "score_news": 0.64,
+      "score_finance": 0.75,
+      "score_tech": 0.83
+    },
+    {
+      "id": "S087",
+      "true_labels": "sports|news",
+      "pred_labels": "finance|tech|news",
+      "score_sports": 0.32,
+      "score_news": 0.49,
+      "score_finance": 0.57,
+      "score_tech": 0.08
+    },
+    {
+      "id": "S088",
+      "true_labels": "sports|tech",
+      "pred_labels": "tech|finance",
+      "score_sports": 0.72,
+      "score_news": 0.73,
+      "score_finance": 0.52,
+      "score_tech": 0.31
+    },
+    {
+      "id": "S089",
+      "true_labels": "tech|sports",
+      "pred_labels": "tech|news|finance",
+      "score_sports": 0.08,
+      "score_news": 0.31,
+      "score_finance": 0.2,
+      "score_tech": 0.08
+    },
+    {
+      "id": "S090",
+      "true_labels": "finance",
+      "pred_labels": "tech|finance|sports",
+      "score_sports": 0.48,
+      "score_news": 0.18,
+      "score_finance": 0.93,
+      "score_tech": 0.06
+    },
+    {
+      "id": "S091",
+      "true_labels": "sports|news",
+      "pred_labels": "tech",
+      "score_sports": 0.52,
+      "score_news": 0.33,
+      "score_finance": 0.89,
+      "score_tech": 0.64
+    },
+    {
+      "id": "S092",
+      "true_labels": "sports",
+      "pred_labels": "news|finance|sports",
+      "score_sports": 0.36,
+      "score_news": 0.89,
+      "score_finance": 0.52,
+      "score_tech": 0.19
+    },
+    {
+      "id": "S093",
+      "true_labels": "tech|news|finance",
+      "pred_labels": "sports",
+      "score_sports": 0.29,
+      "score_news": 0.26,
+      "score_finance": 0.76,
+      "score_tech": 0.38
+    },
+    {
+      "id": "S094",
+      "true_labels": "sports|tech|finance",
+      "pred_labels": "tech",
+      "score_sports": 0.81,
+      "score_news": 0.05,
+      "score_finance": 0.77,
+      "score_tech": 0.13
+    },
+    {
+      "id": "S095",
+      "true_labels": "sports|news|finance",
+      "pred_labels": "finance",
+      "score_sports": 0.05,
+      "score_news": 0.92,
+      "score_finance": 0.55,
+      "score_tech": 0.17
+    },
+    {
+      "id": "S096",
+      "true_labels": "finance|tech|news",
+      "pred_labels": "finance|news",
+      "score_sports": 0.62,
+      "score_news": 0.27,
+      "score_finance": 0.07,
+      "score_tech": 0.78
+    },
+    {
+      "id": "S097",
+      "true_labels": "sports|tech",
+      "pred_labels": "finance|news|sports",
+      "score_sports": 0.34,
+      "score_news": 0.38,
+      "score_finance": 0.78,
+      "score_tech": 0.17
+    },
+    {
+      "id": "S098",
+      "true_labels": "finance|sports",
+      "pred_labels": "tech|finance",
+      "score_sports": 0.25,
+      "score_news": 0.86,
+      "score_finance": 0.54,
+      "score_tech": 0.63
+    },
+    {
+      "id": "S099",
+      "true_labels": "finance|news",
+      "pred_labels": "news|sports|tech",
+      "score_sports": 0.68,
+      "score_news": 0.17,
+      "score_finance": 0.81,
+      "score_tech": 0.04
+    },
+    {
+      "id": "S100",
+      "true_labels": "sports|tech|finance",
+      "pred_labels": "news",
+      "score_sports": 0.72,
+      "score_news": 0.16,
+      "score_finance": 0.81,
+      "score_tech": 0.75
+    },
+    {
+      "id": "S101",
+      "true_labels": "sports|tech|finance",
+      "pred_labels": "sports",
+      "score_sports": 0.39,
+      "score_news": 0.59,
+      "score_finance": 0.61,
+      "score_tech": 0.5
+    },
+    {
+      "id": "S102",
+      "true_labels": "sports",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.71,
+      "score_news": 0.09,
+      "score_finance": 0.56,
+      "score_tech": 0.38
+    },
+    {
+      "id": "S103",
+      "true_labels": "finance|news",
+      "pred_labels": "sports|tech|finance",
+      "score_sports": 0.64,
+      "score_news": 0.51,
+      "score_finance": 0.28,
+      "score_tech": 0.54
+    },
+    {
+      "id": "S104",
+      "true_labels": "tech|news|sports",
+      "pred_labels": "finance|tech",
+      "score_sports": 0.38,
+      "score_news": 0.02,
+      "score_finance": 0.36,
+      "score_tech": 0.45
+    },
+    {
+      "id": "S105",
+      "true_labels": "finance|sports|tech",
+      "pred_labels": "sports|tech",
+      "score_sports": 0.97,
+      "score_news": 0.44,
+      "score_finance": 0.48,
+      "score_tech": 0.65
+    },
+    {
+      "id": "S106",
+      "true_labels": "news|tech|finance",
+      "pred_labels": "finance|tech|news",
+      "score_sports": 0.53,
+      "score_news": 0.36,
+      "score_finance": 0.33,
+      "score_tech": 0.72
+    },
+    {
+      "id": "S107",
+      "true_labels": "finance|tech",
+      "pred_labels": "finance|tech",
+      "score_sports": 0.38,
+      "score_news": 0.2,
+      "score_finance": 0.56,
+      "score_tech": 0.59
+    },
+    {
+      "id": "S108",
+      "true_labels": "news",
+      "pred_labels": "finance|sports|news",
+      "score_sports": 0.71,
+      "score_news": 1.0,
+      "score_finance": 0.98,
+      "score_tech": 0.3
+    },
+    {
+      "id": "S109",
+      "true_labels": "sports|news|tech",
+      "pred_labels": "finance|news|sports",
+      "score_sports": 0.48,
+      "score_news": 0.98,
+      "score_finance": 0.55,
+      "score_tech": 0.96
+    },
+    {
+      "id": "S110",
+      "true_labels": "tech",
+      "pred_labels": "sports|tech|news",
+      "score_sports": 0.66,
+      "score_news": 0.53,
+      "score_finance": 0.97,
+      "score_tech": 0.27
+    },
+    {
+      "id": "S111",
+      "true_labels": "news|finance|sports",
+      "pred_labels": "tech|sports",
+      "score_sports": 0.69,
+      "score_news": 0.78,
+      "score_finance": 0.87,
+      "score_tech": 0.47
+    },
+    {
+      "id": "S112",
+      "true_labels": "tech|finance",
+      "pred_labels": "tech",
+      "score_sports": 0.6,
+      "score_news": 0.64,
+      "score_finance": 0.92,
+      "score_tech": 0.33
+    },
+    {
+      "id": "S113",
+      "true_labels": "finance|tech|news",
+      "pred_labels": "news|tech",
+      "score_sports": 0.67,
+      "score_news": 0.1,
+      "score_finance": 0.5,
+      "score_tech": 0.27
+    },
+    {
+      "id": "S114",
+      "true_labels": "finance|sports|news",
+      "pred_labels": "news",
+      "score_sports": 0.48,
+      "score_news": 0.1,
+      "score_finance": 0.3,
+      "score_tech": 0.91
+    },
+    {
+      "id": "S115",
+      "true_labels": "tech|sports|news",
+      "pred_labels": "news",
+      "score_sports": 0.98,
+      "score_news": 0.38,
+      "score_finance": 0.07,
+      "score_tech": 0.85
+    },
+    {
+      "id": "S116",
+      "true_labels": "finance|news",
+      "pred_labels": "news",
+      "score_sports": 0.38,
+      "score_news": 0.46,
+      "score_finance": 0.88,
+      "score_tech": 0.75
+    },
+    {
+      "id": "S117",
+      "true_labels": "tech|sports|news",
+      "pred_labels": "finance|news|tech",
+      "score_sports": 0.07,
+      "score_news": 0.39,
+      "score_finance": 0.29,
+      "score_tech": 0.13
+    },
+    {
+      "id": "S118",
+      "true_labels": "tech|finance",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.46,
+      "score_news": 0.61,
+      "score_finance": 0.29,
+      "score_tech": 0.81
+    },
+    {
+      "id": "S119",
+      "true_labels": "sports|news|finance",
+      "pred_labels": "finance",
+      "score_sports": 0.04,
+      "score_news": 0.02,
+      "score_finance": 0.69,
+      "score_tech": 0.31
+    },
+    {
+      "id": "S120",
+      "true_labels": "sports",
+      "pred_labels": "sports",
+      "score_sports": 0.71,
+      "score_news": 0.91,
+      "score_finance": 0.2,
+      "score_tech": 0.46
+    },
+    {
+      "id": "S121",
+      "true_labels": "tech",
+      "pred_labels": "sports|tech",
+      "score_sports": 0.93,
+      "score_news": 0.44,
+      "score_finance": 0.17,
+      "score_tech": 0.08
+    },
+    {
+      "id": "S122",
+      "true_labels": "sports|finance|news",
+      "pred_labels": "news|finance|sports",
+      "score_sports": 0.27,
+      "score_news": 0.87,
+      "score_finance": 0.19,
+      "score_tech": 0.07
+    },
+    {
+      "id": "S123",
+      "true_labels": "sports|tech",
+      "pred_labels": "finance",
+      "score_sports": 0.76,
+      "score_news": 0.4,
+      "score_finance": 0.61,
+      "score_tech": 0.99
+    },
+    {
+      "id": "S124",
+      "true_labels": "sports",
+      "pred_labels": "sports|tech",
+      "score_sports": 0.61,
+      "score_news": 0.28,
+      "score_finance": 0.14,
+      "score_tech": 0.86
+    },
+    {
+      "id": "S125",
+      "true_labels": "tech|finance",
+      "pred_labels": "news|tech",
+      "score_sports": 0.29,
+      "score_news": 0.4,
+      "score_finance": 0.34,
+      "score_tech": 0.21
+    },
+    {
+      "id": "S126",
+      "true_labels": "news|tech",
+      "pred_labels": "tech|news",
+      "score_sports": 0.98,
+      "score_news": 0.06,
+      "score_finance": 0.86,
+      "score_tech": 0.67
+    },
+    {
+      "id": "S127",
+      "true_labels": "finance|news|tech",
+      "pred_labels": "news|sports|finance",
+      "score_sports": 0.86,
+      "score_news": 0.87,
+      "score_finance": 0.14,
+      "score_tech": 0.25
+    },
+    {
+      "id": "S128",
+      "true_labels": "finance|tech",
+      "pred_labels": "tech",
+      "score_sports": 0.34,
+      "score_news": 0.5,
+      "score_finance": 0.23,
+      "score_tech": 0.77
+    },
+    {
+      "id": "S129",
+      "true_labels": "tech|finance",
+      "pred_labels": "sports|news|tech",
+      "score_sports": 0.66,
+      "score_news": 0.86,
+      "score_finance": 0.53,
+      "score_tech": 0.24
+    },
+    {
+      "id": "S130",
+      "true_labels": "news|sports|finance",
+      "pred_labels": "tech|sports|news",
+      "score_sports": 0.01,
+      "score_news": 0.81,
+      "score_finance": 0.54,
+      "score_tech": 0.72
+    },
+    {
+      "id": "S131",
+      "true_labels": "news|finance",
+      "pred_labels": "finance|tech|sports",
+      "score_sports": 0.72,
+      "score_news": 0.35,
+      "score_finance": 0.32,
+      "score_tech": 0.0
+    },
+    {
+      "id": "S132",
+      "true_labels": "finance|news",
+      "pred_labels": "tech",
+      "score_sports": 0.04,
+      "score_news": 0.85,
+      "score_finance": 0.85,
+      "score_tech": 0.69
+    },
+    {
+      "id": "S133",
+      "true_labels": "finance",
+      "pred_labels": "sports",
+      "score_sports": 0.43,
+      "score_news": 0.7,
+      "score_finance": 0.86,
+      "score_tech": 0.55
+    },
+    {
+      "id": "S134",
+      "true_labels": "news|finance",
+      "pred_labels": "news",
+      "score_sports": 0.64,
+      "score_news": 0.72,
+      "score_finance": 0.61,
+      "score_tech": 0.74
+    },
+    {
+      "id": "S135",
+      "true_labels": "sports|finance|tech",
+      "pred_labels": "tech|news|finance",
+      "score_sports": 0.03,
+      "score_news": 0.44,
+      "score_finance": 0.66,
+      "score_tech": 0.13
+    },
+    {
+      "id": "S136",
+      "true_labels": "finance|news|sports",
+      "pred_labels": "news|sports",
+      "score_sports": 0.27,
+      "score_news": 0.94,
+      "score_finance": 0.92,
+      "score_tech": 0.83
+    },
+    {
+      "id": "S137",
+      "true_labels": "sports|tech",
+      "pred_labels": "finance|tech",
+      "score_sports": 0.01,
+      "score_news": 0.06,
+      "score_finance": 0.09,
+      "score_tech": 0.18
+    },
+    {
+      "id": "S138",
+      "true_labels": "tech|finance|sports",
+      "pred_labels": "finance|tech",
+      "score_sports": 0.19,
+      "score_news": 0.53,
+      "score_finance": 0.06,
+      "score_tech": 0.72
+    },
+    {
+      "id": "S139",
+      "true_labels": "sports|finance",
+      "pred_labels": "finance",
+      "score_sports": 0.83,
+      "score_news": 0.87,
+      "score_finance": 0.79,
+      "score_tech": 0.86
+    },
+    {
+      "id": "S140",
+      "true_labels": "news|sports",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.59,
+      "score_news": 0.8,
+      "score_finance": 0.97,
+      "score_tech": 0.77
+    },
+    {
+      "id": "S141",
+      "true_labels": "tech|finance|sports",
+      "pred_labels": "finance|tech|sports",
+      "score_sports": 0.43,
+      "score_news": 0.97,
+      "score_finance": 0.49,
+      "score_tech": 0.01
+    },
+    {
+      "id": "S142",
+      "true_labels": "tech|finance|sports",
+      "pred_labels": "finance",
+      "score_sports": 0.44,
+      "score_news": 0.78,
+      "score_finance": 0.18,
+      "score_tech": 0.59
+    },
+    {
+      "id": "S143",
+      "true_labels": "finance|tech",
+      "pred_labels": "finance",
+      "score_sports": 0.23,
+      "score_news": 0.76,
+      "score_finance": 0.87,
+      "score_tech": 0.46
+    },
+    {
+      "id": "S144",
+      "true_labels": "news|tech|sports",
+      "pred_labels": "finance",
+      "score_sports": 0.53,
+      "score_news": 0.43,
+      "score_finance": 0.19,
+      "score_tech": 0.05
+    },
+    {
+      "id": "S145",
+      "true_labels": "news",
+      "pred_labels": "news|sports",
+      "score_sports": 0.51,
+      "score_news": 0.65,
+      "score_finance": 0.13,
+      "score_tech": 0.23
+    },
+    {
+      "id": "S146",
+      "true_labels": "finance|sports|tech",
+      "pred_labels": "sports|finance|news",
+      "score_sports": 0.05,
+      "score_news": 0.22,
+      "score_finance": 0.48,
+      "score_tech": 0.98
+    },
+    {
+      "id": "S147",
+      "true_labels": "sports|finance|news",
+      "pred_labels": "news",
+      "score_sports": 0.27,
+      "score_news": 0.17,
+      "score_finance": 0.22,
+      "score_tech": 0.45
+    },
+    {
+      "id": "S148",
+      "true_labels": "news|finance",
+      "pred_labels": "sports|tech|news",
+      "score_sports": 0.7,
+      "score_news": 0.78,
+      "score_finance": 0.38,
+      "score_tech": 0.8
+    },
+    {
+      "id": "S149",
+      "true_labels": "finance",
+      "pred_labels": "sports|news|tech",
+      "score_sports": 0.89,
+      "score_news": 0.24,
+      "score_finance": 0.16,
+      "score_tech": 0.5
+    },
+    {
+      "id": "S150",
+      "true_labels": "finance|news",
+      "pred_labels": "sports",
+      "score_sports": 0.57,
+      "score_news": 0.45,
+      "score_finance": 0.21,
+      "score_tech": 0.29
+    },
+    {
+      "id": "S151",
+      "true_labels": "news",
+      "pred_labels": "sports|finance|news",
+      "score_sports": 0.93,
+      "score_news": 0.74,
+      "score_finance": 0.43,
+      "score_tech": 0.02
+    },
+    {
+      "id": "S152",
+      "true_labels": "news|finance",
+      "pred_labels": "tech",
+      "score_sports": 0.48,
+      "score_news": 0.81,
+      "score_finance": 0.07,
+      "score_tech": 0.46
+    },
+    {
+      "id": "S153",
+      "true_labels": "sports|tech",
+      "pred_labels": "tech",
+      "score_sports": 0.06,
+      "score_news": 0.94,
+      "score_finance": 0.27,
+      "score_tech": 0.24
+    },
+    {
+      "id": "S154",
+      "true_labels": "news",
+      "pred_labels": "tech|sports|news",
+      "score_sports": 0.21,
+      "score_news": 0.22,
+      "score_finance": 1.0,
+      "score_tech": 0.24
+    },
+    {
+      "id": "S155",
+      "true_labels": "finance|tech|sports",
+      "pred_labels": "news",
+      "score_sports": 0.1,
+      "score_news": 0.21,
+      "score_finance": 0.08,
+      "score_tech": 0.05
+    },
+    {
+      "id": "S156",
+      "true_labels": "news|finance|sports",
+      "pred_labels": "news|finance",
+      "score_sports": 0.49,
+      "score_news": 0.78,
+      "score_finance": 0.42,
+      "score_tech": 0.99
+    },
+    {
+      "id": "S157",
+      "true_labels": "sports|tech|finance",
+      "pred_labels": "finance",
+      "score_sports": 0.99,
+      "score_news": 0.86,
+      "score_finance": 0.5,
+      "score_tech": 0.16
+    },
+    {
+      "id": "S158",
+      "true_labels": "news|tech|sports",
+      "pred_labels": "finance|sports|tech",
+      "score_sports": 0.94,
+      "score_news": 0.4,
+      "score_finance": 0.94,
+      "score_tech": 0.34
+    },
+    {
+      "id": "S159",
+      "true_labels": "sports|tech",
+      "pred_labels": "news|tech|finance",
+      "score_sports": 0.81,
+      "score_news": 0.15,
+      "score_finance": 0.34,
+      "score_tech": 0.84
+    },
+    {
+      "id": "S160",
+      "true_labels": "news",
+      "pred_labels": "finance|news",
+      "score_sports": 0.32,
+      "score_news": 0.65,
+      "score_finance": 0.48,
+      "score_tech": 0.69
+    },
+    {
+      "id": "S161",
+      "true_labels": "sports",
+      "pred_labels": "sports|finance|news",
+      "score_sports": 0.52,
+      "score_news": 0.37,
+      "score_finance": 0.99,
+      "score_tech": 0.14
+    },
+    {
+      "id": "S162",
+      "true_labels": "news",
+      "pred_labels": "finance|sports",
+      "score_sports": 0.28,
+      "score_news": 0.47,
+      "score_finance": 0.22,
+      "score_tech": 0.94
+    },
+    {
+      "id": "S163",
+      "true_labels": "tech|sports",
+      "pred_labels": "tech|news|finance",
+      "score_sports": 0.21,
+      "score_news": 0.96,
+      "score_finance": 0.4,
+      "score_tech": 0.62
+    },
+    {
+      "id": "S164",
+      "true_labels": "finance",
+      "pred_labels": "sports|finance",
+      "score_sports": 0.99,
+      "score_news": 0.84,
+      "score_finance": 0.88,
+      "score_tech": 0.28
+    },
+    {
+      "id": "S165",
+      "true_labels": "finance",
+      "pred_labels": "tech|sports|finance",
+      "score_sports": 0.47,
+      "score_news": 0.78,
+      "score_finance": 0.84,
+      "score_tech": 0.09
+    },
+    {
+      "id": "S166",
+      "true_labels": "tech|news",
+      "pred_labels": "tech|finance",
+      "score_sports": 0.32,
+      "score_news": 0.46,
+      "score_finance": 0.83,
+      "score_tech": 0.17
+    },
+    {
+      "id": "S167",
+      "true_labels": "news",
+      "pred_labels": "sports",
+      "score_sports": 0.06,
+      "score_news": 0.99,
+      "score_finance": 0.2,
+      "score_tech": 0.92
+    },
+    {
+      "id": "S168",
+      "true_labels": "tech|news",
+      "pred_labels": "finance|news",
+      "score_sports": 0.4,
+      "score_news": 0.52,
+      "score_finance": 0.31,
+      "score_tech": 0.6
+    },
+    {
+      "id": "S169",
+      "true_labels": "news",
+      "pred_labels": "tech",
+      "score_sports": 0.56,
+      "score_news": 0.85,
+      "score_finance": 0.03,
+      "score_tech": 0.83
+    },
+    {
+      "id": "S170",
+      "true_labels": "tech|finance",
+      "pred_labels": "sports|tech",
+      "score_sports": 0.71,
+      "score_news": 0.94,
+      "score_finance": 0.55,
+      "score_tech": 0.6
+    },
+    {
+      "id": "S171",
+      "true_labels": "tech|sports",
+      "pred_labels": "tech|news|finance",
+      "score_sports": 0.51,
+      "score_news": 0.52,
+      "score_finance": 0.08,
+      "score_tech": 0.99
+    },
+    {
+      "id": "S172",
+      "true_labels": "news|tech",
+      "pred_labels": "finance",
+      "score_sports": 0.03,
+      "score_news": 0.07,
+      "score_finance": 0.14,
+      "score_tech": 0.93
+    },
+    {
+      "id": "S173",
+      "true_labels": "finance|sports",
+      "pred_labels": "tech",
+      "score_sports": 0.77,
+      "score_news": 0.93,
+      "score_finance": 0.66,
+      "score_tech": 0.02
+    },
+    {
+      "id": "S174",
+      "true_labels": "finance|news",
+      "pred_labels": "sports|tech|finance",
+      "score_sports": 0.67,
+      "score_news": 0.11,
+      "score_finance": 0.98,
+      "score_tech": 0.22
+    },
+    {
+      "id": "S175",
+      "true_labels": "finance",
+      "pred_labels": "news|sports",
+      "score_sports": 0.94,
+      "score_news": 0.1,
+      "score_finance": 0.44,
+      "score_tech": 0.11
+    },
+    {
+      "id": "S176",
+      "true_labels": "tech",
+      "pred_labels": "news|sports|finance",
+      "score_sports": 0.15,
+      "score_news": 0.1,
+      "score_finance": 0.38,
+      "score_tech": 0.77
+    },
+    {
+      "id": "S177",
+      "true_labels": "news|sports|tech",
+      "pred_labels": "sports",
+      "score_sports": 0.13,
+      "score_news": 0.87,
+      "score_finance": 0.67,
+      "score_tech": 0.22
+    },
+    {
+      "id": "S178",
+      "true_labels": "finance|tech",
+      "pred_labels": "sports|finance",
+      "score_sports": 0.9,
+      "score_news": 0.92,
+      "score_finance": 0.51,
+      "score_tech": 0.68
+    },
+    {
+      "id": "S179",
+      "true_labels": "news",
+      "pred_labels": "tech|sports",
+      "score_sports": 0.47,
+      "score_news": 0.31,
+      "score_finance": 0.56,
+      "score_tech": 0.68
+    },
+    {
+      "id": "S180",
+      "true_labels": "finance",
+      "pred_labels": "tech|finance",
+      "score_sports": 0.7,
+      "score_news": 0.07,
+      "score_finance": 0.66,
+      "score_tech": 0.43
+    },
+    {
+      "id": "S181",
+      "true_labels": "news",
+      "pred_labels": "tech|sports|finance",
+      "score_sports": 0.89,
+      "score_news": 0.99,
+      "score_finance": 0.5,
+      "score_tech": 0.27
+    },
+    {
+      "id": "S182",
+      "true_labels": "tech",
+      "pred_labels": "tech",
+      "score_sports": 0.44,
+      "score_news": 0.65,
+      "score_finance": 0.41,
+      "score_tech": 0.38
+    },
+    {
+      "id": "S183",
+      "true_labels": "news|finance",
+      "pred_labels": "tech",
+      "score_sports": 0.28,
+      "score_news": 0.15,
+      "score_finance": 0.32,
+      "score_tech": 0.72
+    },
+    {
+      "id": "S184",
+      "true_labels": "finance|news",
+      "pred_labels": "tech",
+      "score_sports": 0.8,
+      "score_news": 0.33,
+      "score_finance": 0.14,
+      "score_tech": 0.07
+    },
+    {
+      "id": "S185",
+      "true_labels": "news|finance",
+      "pred_labels": "sports|finance|tech",
+      "score_sports": 0.4,
+      "score_news": 0.41,
+      "score_finance": 0.17,
+      "score_tech": 0.89
+    },
+    {
+      "id": "S186",
+      "true_labels": "tech",
+      "pred_labels": "news",
+      "score_sports": 0.74,
+      "score_news": 0.02,
+      "score_finance": 0.12,
+      "score_tech": 0.02
+    },
+    {
+      "id": "S187",
+      "true_labels": "finance",
+      "pred_labels": "finance|news",
+      "score_sports": 0.97,
+      "score_news": 0.72,
+      "score_finance": 0.95,
+      "score_tech": 0.7
+    },
+    {
+      "id": "S188",
+      "true_labels": "tech",
+      "pred_labels": "tech|news|finance",
+      "score_sports": 0.46,
+      "score_news": 0.6,
+      "score_finance": 0.62,
+      "score_tech": 0.45
+    },
+    {
+      "id": "S189",
+      "true_labels": "tech",
+      "pred_labels": "sports",
+      "score_sports": 0.27,
+      "score_news": 0.8,
+      "score_finance": 0.58,
+      "score_tech": 0.7
+    },
+    {
+      "id": "S190",
+      "true_labels": "sports|tech|finance",
+      "pred_labels": "news",
+      "score_sports": 0.64,
+      "score_news": 0.87,
+      "score_finance": 0.32,
+      "score_tech": 0.19
+    },
+    {
+      "id": "S191",
+      "true_labels": "finance|sports",
+      "pred_labels": "news|tech",
+      "score_sports": 0.77,
+      "score_news": 1.0,
+      "score_finance": 0.11,
+      "score_tech": 0.91
+    },
+    {
+      "id": "S192",
+      "true_labels": "news",
+      "pred_labels": "sports",
+      "score_sports": 0.89,
+      "score_news": 0.86,
+      "score_finance": 0.86,
+      "score_tech": 0.65
+    },
+    {
+      "id": "S193",
+      "true_labels": "tech|finance",
+      "pred_labels": "tech|finance|sports",
+      "score_sports": 0.19,
+      "score_news": 0.58,
+      "score_finance": 0.55,
+      "score_tech": 0.99
+    },
+    {
+      "id": "S194",
+      "true_labels": "finance",
+      "pred_labels": "tech|finance|sports",
+      "score_sports": 0.29,
+      "score_news": 0.47,
+      "score_finance": 0.32,
+      "score_tech": 0.13
+    },
+    {
+      "id": "S195",
+      "true_labels": "tech",
+      "pred_labels": "tech|news",
+      "score_sports": 0.29,
+      "score_news": 0.46,
+      "score_finance": 0.99,
+      "score_tech": 1.0
+    },
+    {
+      "id": "S196",
+      "true_labels": "sports",
+      "pred_labels": "finance",
+      "score_sports": 0.89,
+      "score_news": 0.71,
+      "score_finance": 0.36,
+      "score_tech": 0.67
+    },
+    {
+      "id": "S197",
+      "true_labels": "sports",
+      "pred_labels": "finance|tech",
+      "score_sports": 0.36,
+      "score_news": 0.72,
+      "score_finance": 0.14,
+      "score_tech": 0.05
+    },
+    {
+      "id": "S198",
+      "true_labels": "finance|tech",
+      "pred_labels": "finance|news",
+      "score_sports": 1.0,
+      "score_news": 0.1,
+      "score_finance": 0.8,
+      "score_tech": 0.28
+    },
+    {
+      "id": "S199",
+      "true_labels": "news|sports|finance",
+      "pred_labels": "finance|news",
+      "score_sports": 0.18,
+      "score_news": 0.96,
+      "score_finance": 0.04,
+      "score_tech": 0.41
+    },
+    {
+      "id": "S200",
+      "true_labels": "news",
+      "pred_labels": "news",
+      "score_sports": 0.83,
+      "score_news": 0.29,
+      "score_finance": 0.21,
+      "score_tech": 0.08
+    }
+  ]
+}

@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+# 환경변수 파일 (절대 git에 올리면 안 됩니다!)
+.env
+
+# Python 가상환경
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+=======
 # Logs
 logs
 *.log
@@ -137,3 +150,4 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+>>>>>>> 781941209e7d7659a6a040e724f36a34709e0c98
