@@ -67,6 +67,13 @@ def evaluate(df: pd.DataFrame, mappings: List[Dict[str, str]], task_type: str, s
     # mappings 리스트를 딕셔너리로 변환 ({"true_class": "col_A", ...} 형태)하여 하위 함수들이 편하게 쓰도록 변경
     mapping_dict = {item['role']: item['column'] for item in mappings}
     
+    # [버그 수정] 하위 호환성 보장 (schemas.py의 y_true -> 기존 metrics의 true_class로 매핑 연결)
+    if 'y_true' in mapping_dict: mapping_dict['true_class'] = mapping_dict['y_true']
+    if 'y_pred' in mapping_dict: mapping_dict['predicted_class'] = mapping_dict['y_pred']
+    if 'true_labels' in mapping_dict: mapping_dict['true_class'] = mapping_dict['true_labels']
+    if 'pred_labels' in mapping_dict: mapping_dict['predicted_class'] = mapping_dict['pred_labels']
+    if 'score_positive' in mapping_dict: mapping_dict['score'] = mapping_dict['score_positive']
+    
     for tc_id in selected_tcs:
         if tc_id not in valid_tcs:
             results[tc_id] = {"error": f"{task_type}에서는 지원하지 않는 지표입니다."}

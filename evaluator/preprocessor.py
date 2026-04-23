@@ -7,6 +7,9 @@ def preprocess_data(df: pd.DataFrame, mappings: List[Dict[str, str]], task_type:
     """
     평가(Metric) 계산 전 데이터를 정리하고 검증하는 전처리 함수.
     """
+    if df.empty:
+        raise ValueError("데이터셋이 비어 있습니다.")
+        
     logs = {
         "dropped_rows": 0,
         "warnings": [],
