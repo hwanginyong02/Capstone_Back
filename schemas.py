@@ -110,6 +110,7 @@ class ConfirmMappingRequest(BaseModel):
     """[Step 2] 사용자가 검토·수정 후 확정한 매핑 제출"""
     task_type:       TaskType           = Field(description="분류 모델 유형")
     column_mappings: list[ColumnMapping] = Field(description="확정된 컬럼 매핑 목록")
+    selected_tcs:    list[str]          = Field(default=[], description="사전에 선택된 평가 지표(TC) 목록")
 
 
 class MappingValidationError(BaseModel):
