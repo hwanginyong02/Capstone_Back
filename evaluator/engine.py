@@ -2,6 +2,7 @@ import pandas as pd
 from typing import Dict, Any, List
 
 from .metrics import common, binary, multiclass, multilabel
+from .preprocessor import preprocess_data
 
 # Task Type 별로 허용되는 TC 정의 (안전 장치)
 VALID_TCS_BY_TASK = {
@@ -55,6 +56,14 @@ def evaluate(df: pd.DataFrame, mappings: List[Dict[str, str]], task_type: str, s
     results = {}
     valid_tcs = VALID_TCS_BY_TASK.get(task_type, set())
     
+    # ── [전처리 단계 추가] ──
+    try:
+        df, pre_logs = preprocess_data(df, mappings, task_type)
+        results["_metadata"] = pre_logs
+    except Exception as e:
+        # 전처리 단계에서 에러(예: 필수 컬럼 누락, 확률 범위 초과)가 나면 즉시 반환
+        return {"error": str(e)}
+
     # mappings 리스트를 딕셔너리로 변환 ({"true_class": "col_A", ...} 형태)하여 하위 함수들이 편하게 쓰도록 변경
     mapping_dict = {item['role']: item['column'] for item in mappings}
     
