@@ -141,6 +141,7 @@ def validate_mapping(request: ConfirmMappingRequest) -> ConfirmMappingResponse:
     """
     task_type = request.task_type
     mappings = request.column_mappings
+    selected_tcs = request.selected_tcs
 
     errors: list[MappingValidationError] = []
     warnings: list[MappingValidationWarning] = []
@@ -188,7 +189,7 @@ def validate_mapping(request: ConfirmMappingRequest) -> ConfirmMappingResponse:
         if role not in mapped_roles:
             warnings.append(MappingValidationWarning(code=code, message=message))
 
-    # ── 4. TC 가용성 계산 ────────────────────────────────────────────────────
+    # ── 4. TC 가용성 계산 및 선택된 TC 검증 ────────────────────────────────────────────────────
     tc_requirements = _TC_REQUIREMENTS[task_type]
     available_tcs: list[str] = []
     unavailable_tcs: list[str] = []
@@ -198,7 +199,15 @@ def validate_mapping(request: ConfirmMappingRequest) -> ConfirmMappingResponse:
             available_tcs.append(tc_name)
         else:
             missing = required_roles - mapped_roles
-            unavailable_tcs.append(f"{tc_name} (누락: {', '.join(r.value for r in missing)})")
+            missing_str = ", ".join(r.value for r in missing)
+            unavailable_tcs.append(f"{tc_name} (누락: {missing_str})")
+            
+            # 🔥 [변경점] 사용자가 계산하겠다고 명시적으로 선택한 TC인데, 필요 역할이 매핑되지 않았다면 Error 처리
+            if tc_name in selected_tcs:
+                errors.append(MappingValidationError(
+                    code="MISSING_TC_REQUIREMENT",
+                    message=f"선택하신 지표 '{tc_name}'를 계산하려면 [{missing_str}] 역할의 컬럼 매핑이 필수입니다."
+                ))
 
     is_valid = len(errors) == 0
 
