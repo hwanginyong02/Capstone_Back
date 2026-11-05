@@ -1,0 +1,643 @@
+[
+ {
+  "id": "F01",
+  "base": "pima_strong",
+  "axis": "faithfulness",
+  "type": "숫자",
+  "slot": "interpretation.confusion_analysis",
+  "old": "이 선언에 비추어 보면, 거짓 음성 38건이 전체 오류 54건의 70.4%를 차지한다는 것은 의뢰자가 더 위험하게 보는 방향의 오류가 오분류의 큰 부분을 이룬다는 뜻이다.",
+  "new": "이 선언에 비추어 보면, 거짓 음성 16건이 전체 오류 54건의 70.4%를 차지한다는 것은 의뢰자가 더 위험하게 보는 방향의 오류가 오분류의 큰 부분을 이룬다는 뜻이다.",
+  "grounds": {
+   "field": "confusion_counts.tested_positive.fn|facts.declared_risk_errors.count",
+   "value": "38 (바꿔 넣은 16 은 fact_sheet.confusion_counts[0].fp)",
+   "note": "[근거 경로] fact_sheet.confusion_counts[0].fn (= fact_sheet.facts.declared_risk_errors.count) — 거짓 음성 건수는 38건인데 그 자리에 거짓 양성 건수 16을 넣었으므로 데이터와 다르다. 같은 칸 문장 1의 '거짓 음성(FN)은 38건'과도 어긋난다(허용 부차 축 일관성)."
+  },
+  "expected_axes": [
+   "faithfulness"
+  ],
+  "allowed_secondary_axes": [
+   "consistency"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 16은 이 결과서 데이터(FP 건수)에 있는 값이라 허용 목록 밖 숫자 검사를 비켜 가도록 골랐다."
+ },
+ {
+  "id": "F02",
+  "base": "segment_weak",
+  "axis": "faithfulness",
+  "type": "숫자",
+  "slot": "interpretation.additional_observations",
+  "old": "brickface는 Recall 1.000이지만 Precision은 0.321이다.",
+  "new": "brickface는 Recall 1.000이지만 Precision은 0.911이다.",
+  "grounds": {
+   "field": "per_class.brickface.precision",
+   "value": "0.32142857142857145 (0.321, = TP 99 / 예측 308); 바꾼 값 0.911 은 fact_sheet.per_class[1].precision (label cement) = 0.9111111111111111 (= TP 82 / 예측 90)",
+   "note": "[근거 경로] fact_sheet.per_class[0].precision (label brickface) — brickface 의 Precision 은 0.321 인데 그 자리에 cement 의 Precision 0.911 을 넣었다. confusion_counts[0] 에서 brickface 는 TP 99, FP 209 이므로 Precision 0.911 은 나올 수 없다."
+  },
+  "expected_axes": [
+   "faithfulness"
+  ],
+  "allowed_secondary_axes": [
+   "consistency"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 0.911은 이 결과서 데이터(cement의 Precision)에 있는 값이라 허용 목록 밖 숫자 검사를 비켜 가도록 골랐다. 판정어는 건드리지 않았다."
+ },
+ {
+  "id": "F03",
+  "base": "segment_weak",
+  "axis": "faithfulness",
+  "type": "이름",
+  "slot": "conclusion.risks",
+  "old": "가장 약한 클래스는 F1이 0.000으로 같은 foliage와 window 두 클래스이다.",
+  "new": "가장 약한 클래스는 F1이 0.000으로 같은 cement와 window 두 클래스이다.",
+  "grounds": {
+   "field": "facts.weakest_class.label",
+   "value": "foliage (f1 0, support 99); 바꿔 넣은 cement 는 fact_sheet.per_class[1].f1 = 0.8677248677248677 (0.868)",
+   "note": "[근거 경로] fact_sheet.facts.weakest_class.label — F1 이 0.000 인 가장 약한 클래스는 foliage(와 window)인데 foliage 를 cement 로 바꿨다. cement 의 F1 은 0.868 이라 0.000 도 아니고 가장 약하지도 않다. window 는 F1 이 똑같이 0.000 이라 바꿔 넣으면 틀린 말이 되지 않으므로 그대로 두었다."
+  },
+  "expected_axes": [
+   "faithfulness"
+  ],
+  "allowed_secondary_axes": [
+   "consistency"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자를 바꾸지 않고 클래스 이름만 바꿨다."
+ },
+ {
+  "id": "F04",
+  "base": "scene_strong",
+  "axis": "faithfulness",
+  "type": "이름",
+  "slot": "conclusion.narrative",
+  "old": "F1이 가장 낮은 레이블은 Mountain이며 F1은 0.484, 표본은 256건이다.",
+  "new": "F1이 가장 낮은 레이블은 Beach(해변)이며 F1은 0.484, 표본은 256건이다.",
+  "grounds": {
+   "field": "facts.weakest_class.label",
+   "value": "Mountain (f1 0.4836 → 0.484, support 256); 비교: fact_sheet.per_class[0] Beach f1 0.6845 → 0.684, support 200",
+   "note": "[근거 경로] fact_sheet.facts.weakest_class.label — 데이터에서 F1이 가장 낮은 레이블은 Mountain(F1 0.484, 표본 256건)이다. Beach(해변)의 F1은 0.684로 가장 낮지 않으므로, 가장 약한 레이블 이름을 Beach(해변)로 쓴 것은 틀렸다."
+  },
+  "expected_axes": [
+   "faithfulness"
+  ],
+  "allowed_secondary_axes": [
+   "consistency"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자(0.484, 256)는 그대로 두고 레이블 이름만 바꿨다. / 자리 옮김: 가장 약한 레이블을 Mountain으로 적은 문장이 interpretation.confusion_analysis 8과 conclusion.risks 0에도 남아 있다. 같은 칸 문장 11 'Mountain처럼 약한 레이블', interpretation.distribution_analysis 0 'Beach(해변) 200건'과도 어긋나므로 일관성 표시가 함께 나올 수 있다. 이름을 바꾸는 유형이라 피할 수 없다. 'Mountain 다음으로 낮다'고 적힌 Urban(도시)(interpretation.additional_observations 2)과 바로 부딪히지 않도록 Beach(해변)를 골랐다."
+ },
+ {
+  "id": "F05",
+  "base": "pima_strong",
+  "axis": "faithfulness",
+  "type": "비교·방향",
+  "slot": "interpretation.confusion_analysis",
+  "old": "양성 클래스인 tested_positive(당뇨 양성 판정)를 기준으로 하면 거짓 양성(FP)은 16건, 거짓 음성(FN)은 38건이다.",
+  "new": "양성 클래스인 tested_positive(당뇨 양성 판정)를 기준으로 하면 거짓 양성(FP)은 16건으로 거짓 음성(FN)보다 많다.",
+  "grounds": {
+   "field": "confusion_counts.tested_positive.fp|confusion_counts.tested_positive.fn",
+   "value": "fp=16, fn=38 (fact_sheet.confusion.matrix [[134,16],[38,43]])",
+   "note": "[근거 경로] fact_sheet.confusion_counts[0].fp, fact_sheet.confusion_counts[0].fn — 혼동행렬에서 거짓 음성은 38건으로 거짓 양성 16건보다 많은데, 바꾼 문장은 거짓 양성 16건이 거짓 음성보다 많다고 대소 관계를 반대로 말한다. 같은 칸 문장 3의 '거짓 음성 38건이 전체 오류 54건의 70.4%'와도 어긋난다(허용 부차 축 일관성)."
+  },
+  "expected_axes": [
+   "faithfulness"
+  ],
+  "allowed_secondary_axes": [
+   "consistency"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 새 숫자를 넣지 않았고(38은 빠지며 같은 칸 문장 3에 남음) 대소 방향만 바꿨다. / 자리 옮김: 이 결과서에는 FN·FP 의 대소를 직접 말한 문장이 없다(문장 4·5와 conclusion.narrative 5는 간접 표현). 그래서 두 건수를 함께 밝힌 가장 가까운 문장(문장 1)을 골라, FP 16건은 그대로 두고 FN 건수 절만 반대 방향의 비교 서술로 바꿨다. 결과서는 옮기지 않는다."
+ },
+ {
+  "id": "F06",
+  "base": "scene_strong",
+  "axis": "faithfulness",
+  "type": "비교·방향(비율)",
+  "slot": "interpretation.confusion_analysis",
+  "old": "확신 오류만으로는 오분류의 절반에 이르지 않고, 경계 오류와 합치면 절반을 넘는다.",
+  "new": "확신 오류만으로도 오분류의 절반을 넘고, 경계 오류와 합치면 그 비중이 더 커진다.",
+  "grounds": {
+   "field": "error_ratios.confident.ratio|error_ratios.confident.count|error_ratios.misclassified",
+   "value": "0.4005 (count 338 / fact_sheet.error_ratios.misclassified 844); 경계 오류 fact_sheet.error_ratios.boundary.count 123 → 합계 461/844 = 0.546",
+   "note": "[근거 경로] fact_sheet.error_ratios.confident.ratio — 확신 오류는 틀린 레이블 칸 844개 중 338개로 40.1%라 절반에 못 미친다. 그런데 이를 '절반을 넘는다'고 써서 비율을 틀린 양 표현으로 나타냈다. 뒷부분('경계 오류와 합치면 그 비중이 더 커진다', 54.6%)은 데이터와 맞다."
+  },
+  "expected_axes": [
+   "faithfulness"
+  ],
+  "allowed_secondary_axes": [
+   "consistency"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자를 넣지 않고 양 표현만 바꿨다. / 자리 옮김: 고정 문장 4.4-fixed17('확신 오류 … 338개(40.1%)')과 같은 칸 문장 19와 어긋나 일관성 표시가 함께 나올 수 있다. 이 결과서에서 비율을 양 표현으로 적은 문장은 이것뿐이라 피할 수 없다."
+ },
+ {
+  "id": "F07",
+  "base": "segment_weak",
+  "axis": "faithfulness",
+  "type": "정도 표현",
+  "slot": "conclusion.narrative",
+  "old": "매크로 F1은 0.619이고 가중 평균 F1도 0.619로 두 값이 같다.",
+  "new": "매크로 F1인 F1 Score는 0.619로 양호한 수준이고 가중 평균 F1도 0.619로 두 값이 같다.",
+  "grounds": {
+   "field": "metric.M4.value|metric.M4.threshold",
+   "value": "value 0.6191294660682417 (0.619), threshold 0.85, status \"fail\", is_core true, margin_text \"-0.231\"; 같은 칸 문장 9 가 'Precision, Recall, F1 Score는 … 매크로 평균이다'로 정의",
+   "note": "[근거 경로] fact_sheet.metrics[3] (metric_id M4, display_name F1 Score) .value / .threshold / .status / .is_core — F1 Score(M4)는 0.619 로 목표 0.850 에 0.231 못 미친 핵심 지표 미달인데 '양호한 수준'이라는 긍정 표현으로 서술했다. 목표가 없는 M11 Macro Average(같은 값, threshold null)로 읽힐 여지를 없애려고 같은 칸 문장 9 의 정의(매크로 평균 = F1 Score)를 그대로 써서 대상을 M4 로 못박았다."
+  },
+  "expected_axes": [
+   "faithfulness"
+  ],
+  "allowed_secondary_axes": [
+   "consistency"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자는 그대로이고 '양호한 수준'은 판정어도 강한 긍정어(우수·탁월 등)도 아니다."
+ },
+ {
+  "id": "F08",
+  "base": "pima_strong",
+  "axis": "faithfulness",
+  "type": "단정형 추론",
+  "slot": "conclusion.narrative",
+  "old": "같은 기관·같은 검사 절차에서 나온 기록이므로, 이 데이터는 학습 데이터와 성격이 비슷한 기록을 대상으로 한 시험으로 보인다.",
+  "new": "같은 기관·같은 검사 절차에서 나온 기록이므로, 이 데이터는 학습 데이터와 성격이 비슷한 기록을 대상으로 한 시험으로 보이며, 판정 대상 지표가 모두 목표를 충족한 것은 이 때문이다.",
+  "grounds": {
+   "field": "",
+   "value": "같은 출처 (의뢰자 제공: 같은 기관·같은 검사 절차에서 나온 기록이다.)",
+   "note": "[근거 경로] client_inputs.test_data.학습 데이터와의 관계 — 데이터는 평가 데이터가 학습과 같은 출처라는 사실만 주고 다른 출처 데이터에서의 성능은 없어(recommendation_narrative.data_quality 문장 6도 확인되지 않았다고 밝힘), 같은 출처라서 목표를 충족했다는 원인은 확인할 수 없다. 그런데도 원문의 '~로 보인다' 추론을 '이 때문이다'라는 단정형 인과로 바꿨다."
+  },
+  "expected_axes": [
+   "faithfulness"
+  ],
+  "allowed_secondary_axes": [
+   "consistency"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자를 바꾸지 않았고 합격 판정과 모순되는 말도 아니다. / 자리 옮김: 이 결과서에는 '~로 추정된다' 문장이 없고 '~로 보인다' 문장은 conclusion.narrative 16·18뿐이어서, 가장 가까운 추론 문장 16을 골랐다. 원문 추론(같은 출처라 성격이 비슷하다)은 데이터와 고정 문장 11a가 뒷받침하므로, 확인할 수 없는 결과(목표 충족)를 인과 대상으로 삼았다. 결과서는 옮기지 않는다."
+ },
+ {
+  "id": "F09",
+  "base": "scene_strong",
+  "axis": "faithfulness",
+  "type": "단정형 추론",
+  "slot": "conclusion.risks",
+  "old": "Mountain은 표본 256건으로 여섯 레이블 가운데 표본이 가장 많고 표본이 작은 레이블도 아니어서, 이 부진은 표본 부족 때문이라기보다 레이블 자체의 판별력 때문일 가능성을 배제할 수 없다.",
+  "new": "Mountain은 표본 256건으로 여섯 레이블 가운데 표본이 가장 많고 표본이 작은 레이블도 아니어서, 이 부진은 표본 부족 때문이라기보다 레이블 자체의 판별력 때문이다.",
+  "grounds": {
+   "field": "",
+   "value": "label Mountain, f1 0.4836, support 256, low_support false, far_below_macro true. 부진의 원인(판별력 등)을 나타내는 필드는 데이터에 없음",
+   "note": "[근거 경로] fact_sheet.facts.weakest_class — 데이터는 Mountain의 F1이 낮고 표본이 작지 않다는 사실만 보여 준다. 부진의 원인을 확인할 근거는 없다. 서술도 recommendation_narrative.data_quality 4에서 '원인은 이번 시험 데이터로 확인되지 않았다', recommendations.2.action 2에서 '낮은 성능의 원인은 확인되지 않았으므로'라고 적었다. 그런데 유보형 추론 '~때문일 가능성을 배제할 수 없다'만 '~때문이다'로 바꿔, 확인할 수 없는 원인을 단정하는 인과로 만들었다."
+  },
+  "expected_axes": [
+   "faithfulness"
+  ],
+  "allowed_secondary_axes": [
+   "consistency"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자(256)는 그대로이고 끝의 유보 표현만 단정형으로 바꿨다. / 자리 옮김: 이 결과서에는 '~로 추정된다'로 끝나는 원인 추론 문장이 없다. 그래서 가장 가까운 유보형 원인 추론('~때문일 가능성을 배제할 수 없다')을 단정형 '~때문이다'로 바꿨다. '~로 보인다'로 끝나는 conclusion.narrative 19·20은 원인을 말하는 문장이 아니어서 쓰지 않았다. 바뀐 문장은 data_quality 4와 recommendations.2.action 2('원인은 확인되지 않았다')와도 어긋나므로 일관성 표시가 함께 나올 수 있다."
+ },
+ {
+  "id": "C01",
+  "base": "pima_strong",
+  "axis": "consistency",
+  "type": "값 불일치",
+  "slot": "conclusion.risks",
+  "old": "가장 약한 클래스는 F1 0.614인 tested_positive(당뇨 양성 판정)이다.",
+  "new": "가장 약한 클래스는 F1 0.682인 tested_positive(당뇨 양성 판정)이다.",
+  "grounds": {
+   "field": "per_class.tested_positive.f1|facts.weakest_class.f1",
+   "value": "'클래스별로는 tested_positive(당뇨 양성 판정) 클래스의 F1이 0.614로 가장 낮다.' / 데이터 값 0.614 (0.682 는 fact_sheet.f1_threshold_gain.max_f1_text, 임계값 0.193에서의 F1)",
+   "note": "[근거 경로] 서술 interpretation.confusion_analysis 문장 6 (데이터: fact_sheet.per_class[1].f1 = fact_sheet.facts.weakest_class.f1_text) — 같은 tested_positive 클래스의 F1을 분석 문장 6과 권고 recommendation_narrative.data_quality 문장 3은 0.614로, 바꾼 문장은 0.682로 말해 두 곳의 값이 어긋난다. 가장 약한 클래스 판단은 현재 임계값 0.5 기준이고 그때 F1은 0.614이므로 데이터와도 다르다."
+  },
+  "expected_axes": [
+   "faithfulness",
+   "consistency"
+  ],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 0.682는 이 결과서 데이터(F1이 가장 높은 결정 임계값에서의 F1)에 있는 값이라 허용 목록 밖 숫자 검사를 비켜 가도록 골랐다."
+ },
+ {
+  "id": "C02",
+  "base": "segment_weak",
+  "axis": "consistency",
+  "type": "판정↔권고",
+  "slot": "recommendation_narrative.model_ops",
+  "old": "재평가 결과를 재현하고 비교하려면 이 항목을 기록해 다음 시험 때 제출하기를 권고한다.",
+  "new": "재평가 결과를 재현하고 비교하려면 이 항목을 기록해 다음 시험 때 제출하기를 권고한다. 다만 이 항목의 기록과 별개로, 모델은 현 상태로 운영해도 무방할 것으로 보인다.",
+  "grounds": {
+   "field": "서술 conclusion.narrative 문장 0 (데이터 fact_sheet.verdict)",
+   "value": "'종합 판정은 최종 불합격이다.' / fact_sheet.verdict = \"FAIL\"",
+   "note": "시험 판정이 불합격이고 같은 칸 문장 1 과 recommendations.0.action 문장 0 이 운영 투입 보류를 권고하는데, 더한 문장은 현 상태로 운영해도 무방하다고 해 판정과 권고가 서로 맞지 않는다."
+  },
+  "expected_axes": [
+   "consistency"
+  ],
+  "allowed_secondary_axes": [
+   "faithfulness"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자가 없고 합격·불합격 같은 판정어를 쓰지 않았다. 원래 권고 문장은 그대로 남는다."
+ },
+ {
+  "id": "C03",
+  "base": "scene_strong",
+  "axis": "consistency",
+  "type": "판정↔권고",
+  "slot": "recommendation_narrative.model_ops",
+  "old": "모델을 변경하거나 결정 임계값 등 운영 설정을 조정할 경우에는 같은 평가 방식으로 재평가하여 목표 충족 여부를 다시 확인할 것을 권고한다.",
+  "new": "모델을 변경하거나 결정 임계값 등 운영 설정을 조정할 경우에는 같은 평가 방식으로 재평가하여 목표 충족 여부를 다시 확인할 것을 권고한다. F1 Score 미달은 판정에 영향을 주지 않으므로 별도의 조치 없이 현 상태로 운영해도 무방할 것으로 보인다.",
+  "grounds": {
+   "field": "서술 conclusion.narrative 문장 2",
+   "value": "핵심 지표가 아닌 F1 Score는 값 0.666으로 목표 0.690에 미달했으며, 이것이 조건부 합격의 사유이다. (fact_sheet.verdict = CONDITIONAL_PASS, fact_sheet.facts.verdict_detail.failed_noncore = [M4 F1 Score])",
+   "note": "판정 사유 문장(conclusion.narrative 문장 2)은 비핵심 지표 F1 Score 미달이 조건부 합격의 사유라고 하는데, 덧붙인 권고는 그 미달이 판정에 영향을 주지 않으니 조치 없이 운영해도 된다고 해 판정과 권고가 정면으로 어긋난다. 원래 권고 문장은 그대로 둔다."
+  },
+  "expected_axes": [
+   "consistency"
+  ],
+  "allowed_secondary_axes": [
+   "faithfulness"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자가 없고 합격·불합격 같은 판정어를 쓰지 않았다. 원래 권고 문장은 그대로 남는다. / 포괄성 변화 예상(권고를 뒤집거나 덧붙임)"
+ },
+ {
+  "id": "C04",
+  "base": "pima_strong",
+  "axis": "consistency",
+  "type": "약점↔권고",
+  "slot": "recommendation_narrative.data_quality",
+  "old": "이 클래스의 표본은 81건이며 작은 표본으로 분류되지 않으므로, 오분류된 양성 기록의 입력값 분포와 라벨 상태를 검토하고 양성 사례를 추가로 확보하여 재평가할 것을 권고한다.",
+  "new": "이 클래스의 표본은 81건이며 작은 표본으로 분류되지 않으므로, 오분류된 양성 기록의 입력값 분포와 라벨 상태는 별도로 점검하지 않아도 될 것으로 보인다.",
+  "grounds": {
+   "field": "서술 conclusion.risks 문장 1 (데이터: fact_sheet.facts.weakest_class.far_below_macro = true, fact_sheet.problems P3)",
+   "value": "이 클래스는 매크로 F1보다 0.1 이상 낮아 운영 위험으로 다룬다.",
+   "note": "소견(conclusion.risks 문장 0~1)은 tested_positive 클래스를 가장 약한 클래스이자 운영 위험으로 지적했는데, 바꾼 권고는 그 클래스의 오분류 기록을 따로 점검하지 않아도 된다고 해 약점과 권고가 맞지 않는다. 숫자는 바꾸지 않았고 recommendations.3.action 문장 0(같은 점검 권고)과도 어긋난다."
+  },
+  "expected_axes": [
+   "consistency"
+  ],
+  "allowed_secondary_axes": [
+   "faithfulness"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자 변경이 없고, 같은 칸의 다른 권고 문장과 recommendations.3.action 이 남아 권고 누락 점검에 걸리지 않도록 했다. / 포괄성 변화 예상(권고를 뒤집거나 덧붙임)"
+ },
+ {
+  "id": "C05",
+  "base": "segment_weak",
+  "axis": "consistency",
+  "type": "약점↔권고",
+  "slot": "recommendations.2.action",
+  "old": "학습 데이터의 foliage 표본 구성과 수량, 카메라 종류별 분포를 확인한다.",
+  "new": "학습 데이터의 foliage 표본 구성과 수량, 카메라 종류별 분포는 별도로 점검하지 않아도 될 것으로 보인다.",
+  "grounds": {
+   "field": "서술 conclusion.risks 문장 2 (데이터 fact_sheet.problems[1])",
+   "value": "'이 가운데 foliage는 매크로 F1보다 0.1 이상 낮아 운영 위험으로 다룬다.' / problems[1] id P2, kind weakest_class, title '최약 클래스 (foliage)', evidence.foliage.f1 '0.000'",
+   "note": "소견은 foliage 를 운영 위험이 있는 가장 약한 클래스로 지적하는데, 그 약점(P2)에 대응하는 권고를 점검하지 않아도 된다고 바꿔 소견과 권고가 어긋난다."
+  },
+  "expected_axes": [
+   "consistency"
+  ],
+  "allowed_secondary_axes": [
+   "faithfulness"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자가 없고 권고 항목 자체는 남아 있다. / 포괄성 변화 예상(권고를 뒤집거나 덧붙임)"
+ },
+ {
+  "id": "C06",
+  "base": "scene_strong",
+  "axis": "consistency",
+  "type": "약점↔권고",
+  "slot": "recommendation_narrative.data_quality",
+  "old": "의뢰자는 모든 클래스가 동등하다고 선언하였으므로 Mountain의 오분류 사례를 먼저 확인하고, Mountain 주석 기준이 일관되게 적용되었는지 점검할 것을 권고한다.",
+  "new": "의뢰자는 모든 클래스가 동등하다고 선언하였으나, Mountain의 오분류 사례를 확인하거나 Mountain 주석 기준이 일관되게 적용되었는지 별도로 점검하지 않아도 될 것으로 보인다.",
+  "grounds": {
+   "field": "서술 conclusion.risks 문장 1",
+   "value": "이 레이블은 매크로 F1보다 0.1 이상 낮아 운영 위험으로 다룬다. (문장 0: 가장 약한 레이블은 F1 0.484인 Mountain이다; fact_sheet.facts.weakest_class.far_below_macro = true; fact_sheet.problems[2] P3 최약 클래스 (Mountain))",
+   "note": "소견에서는 Mountain을 매크로 F1보다 0.1 이상 낮은 운영 위험으로 지적했다. 그런데 그 약점에 대한 권고를 '별도로 점검하지 않아도 된다'로 바꿔, 지적한 약점과 권고가 서로 어긋난다."
+  },
+  "expected_axes": [
+   "consistency"
+  ],
+  "allowed_secondary_axes": [
+   "faithfulness"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자와 판정어가 없고, P3 권고 항목(recommendations.2)과 같은 칸의 P3 언급이 그대로 남는다. / 포괄성 변화 예상(권고를 뒤집거나 덧붙임)"
+ },
+ {
+  "id": "C07",
+  "base": "pima_strong",
+  "axis": "consistency",
+  "type": "분석↔소견",
+  "slot": "conclusion.narrative",
+  "old": "현재 결정 임계값 0.5에서 F1은 0.614이고, F1이 가장 높은 결정 임계값 0.193에서는 0.682로 향상폭이 0.068이어서 조정 여지가 크지 않은 것으로 판단되었다.",
+  "new": "현재 결정 임계값 0.5에서 F1은 0.614이고, F1이 가장 높은 결정 임계값 0.193에서는 0.682로 향상폭이 0.068이어서 조정 여지가 큰 것으로 보인다.",
+  "grounds": {
+   "field": "서술 interpretation.additional_observations 문장 2 (데이터: fact_sheet.f1_threshold_gain.notable)",
+   "value": "'이 데이터에서 오를 수 있는 최대 향상폭은 0.068로 0.1 미만이어서, F1 기준으로는 조정 여지가 크지 않은 것으로 판단되었다.' / notable=false",
+   "note": "분석(칸 7.3 문장 2)은 향상폭 0.068이 0.1 미만이라 조정 여지가 크지 않다고 판단했는데, 소견(칸 8.2 문장 13)은 같은 수치로 조정 여지가 크다고 반대로 말한다. 숫자는 그대로이며 데이터의 notable=false 와도 어긋난다(허용 부차 축 충실성)."
+  },
+  "expected_axes": [
+   "consistency"
+  ],
+  "allowed_secondary_axes": [
+   "faithfulness"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자 변경이 없고 합격 판정과 모순되는 말이 아니다."
+ },
+ {
+  "id": "C08",
+  "base": "segment_weak",
+  "axis": "consistency",
+  "type": "분석↔소견",
+  "slot": "conclusion.risks",
+  "old": "Precision, Recall, F1 Score는 클래스별 값의 매크로 평균이므로 두 클래스의 부진이 평균값에 그대로 반영되어 있다.",
+  "new": "Precision, Recall, F1 Score는 클래스별 값의 매크로 평균이지만 두 클래스의 부진이 평균값에 크게 반영되지는 않은 것으로 보인다.",
+  "grounds": {
+   "field": "서술 interpretation.confusion_analysis 문장 11",
+   "value": "'따라서 두 클래스의 F1 0.000은 평균 지표에 그대로 반영되어 있다.'",
+   "note": "분석은 F1 0.000 인 두 클래스가 매크로 평균에 그대로 반영된다고 판단했는데, 소견은 같은 '반영' 낱말로 크게 반영되지 않았다고 반대로 판단해 글 위에서 바로 맞선다. 데이터상 일곱 클래스 중 두 클래스의 F1 이 0(per_class[2]·[6].f1 = 0)이고 매크로 F1 은 0.619 다."
+  },
+  "expected_axes": [
+   "consistency"
+  ],
+  "allowed_secondary_axes": [
+   "faithfulness"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자를 바꾸거나 더하지 않았고 판정어도 없다."
+ },
+ {
+  "id": "C09",
+  "base": "scene_strong",
+  "axis": "consistency",
+  "type": "분석↔소견",
+  "slot": "conclusion.risks",
+  "old": "또한 F1 Score는 레이블별 값의 매크로 평균이라 Mountain의 부진이 평균 값에 그대로 들어 있다.",
+  "new": "또한 F1 Score는 레이블별 값의 매크로 평균이지만 Mountain의 부진은 평균 값에 거의 반영되지 않은 것으로 보인다.",
+  "grounds": {
+   "field": "서술 interpretation.confusion_analysis 문장 12",
+   "value": "레이블마다 같은 무게로 계산되므로 Mountain의 낮은 값은 평균 지표에 그대로 반영되어 있다. (conclusion.narrative 11도 같은 판단: 'Mountain처럼 약한 레이블의 부진이 이 평균에 그대로 반영된다')",
+   "note": "분석(7.1)에서는 매크로 평균이라 Mountain의 낮은 값이 평균에 그대로 반영된다고 판단했다. 그런데 소견(8.3)에서는 거의 반영되지 않는다고 반대로 적었다. 데이터로도 틀렸다. 매크로 F1 0.666은 여섯 레이블 F1의 단순 평균이고, Mountain을 빼고 평균을 내면 0.702로 목표 0.690을 넘는다."
+  },
+  "expected_axes": [
+   "consistency"
+  ],
+  "allowed_secondary_axes": [
+   "faithfulness"
+  ],
+  "first_check_pass_by_design": true,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 예 — 설계 의도이며 실제 통과 여부는 베이스라인 1에서 확인한다. 숫자와 판정어가 없다."
+ },
+ {
+  "id": "V01",
+  "base": "pima_strong",
+  "axis": "변형",
+  "type": "연결 어미 교체",
+  "slot": "conclusion.benchmark",
+  "old": "이 기준은 공개 벤치마크 평균이 아니라 시험기관이 자체 설정한 기준이며, 도메인별로 상이할 수 있다.",
+  "new": "이 기준은 공개 벤치마크 평균이 아니라 시험기관이 자체 설정한 기준이고, 도메인별로 상이할 수 있다.",
+  "grounds": {
+   "field": "conclusion.benchmark 문장 1",
+   "value": "…기준이며, → …기준이고,",
+   "note": "나열 연결 어미 '-이며'를 같은 뜻의 '-이고,'로 바꾼 것뿐이라 주장 내용·숫자·추론 표시가 그대로다."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인)"
+ },
+ {
+  "id": "V02",
+  "base": "pima_strong",
+  "axis": "변형",
+  "type": "숫자 표기 변환",
+  "slot": "conclusion.benchmark",
+  "old": "내부 참조 기준과 비교하면 Accuracy(0.766, 참조 범위 0.85~0.92), Precision(0.729, 참조 범위 0.80~0.92), Recall(0.531, 참조 범위 0.80~0.92), F1 Score(0.614, 참조 범위 0.83~0.91), AUROC(0.828, 참조 범위 0.85~0.95), AUPRC(0.716, 참조 범위 0.80~0.93)는 모두 참조 범위보다 낮은 위치에 있다.",
+  "new": "내부 참조 기준과 비교하면 Accuracy(76.6%, 참조 범위 0.85~0.92), Precision(0.729, 참조 범위 0.80~0.92), Recall(0.531, 참조 범위 0.80~0.92), F1 Score(0.614, 참조 범위 0.83~0.91), AUROC(0.828, 참조 범위 0.85~0.95), AUPRC(0.716, 참조 범위 0.80~0.93)는 모두 참조 범위보다 낮은 위치에 있다.",
+  "grounds": {
+   "field": "같은 값의 다른 표기",
+   "value": "0.766 = 76.6%",
+   "note": "0.766 를 같은 값의 백분율 표기 76.6% 로 바꾼 것이라 값과 뜻이 같다(표시 자릿수 유지)."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인) / 자리 옮김: 처음 고른 자리의 백분율 표기가 1차 점검 허용 목록 밖이라 동결 전 확인에서 원본과 결과가 달라 자리를 옮겼다. 선정 규칙(1차 점검 통과·범위 끝값과 0 제외·다른 항목 문장 제외·같은 문장에 같은 종류의 다른 값이 다른 표기로 남는 후보 제외)을 모두 만족하는 자리가 이 결과서에 없어, 마지막 조건을 뺀 규칙의 첫 후보 자리를 쓴다. 이 변형의 불변성은 발급 결정과 차단 축(충실성·일관성) 점수로만 판단한다(사전 등록 v3)."
+ },
+ {
+  "id": "V03",
+  "base": "pima_strong",
+  "axis": "변형",
+  "type": "문장 순서 교체",
+  "slot": "interpretation.additional_observations",
+  "old": "이 임계값에서도 Recall은 목표를 충족한다. 같은 임계값에서 Precision은 현재 0.729에서 0.549로 달라진다.",
+  "new": "같은 임계값에서 Precision은 현재 0.729에서 0.549로 달라진다. 이 임계값에서도 Recall은 목표를 충족한다.",
+  "grounds": {
+   "field": "interpretation.additional_observations 문장 4~6",
+   "value": "문장 5 '이 임계값'·문장 6 '같은 임계값'은 둘 다 문장 4의 임계값 0.193을 가리킨다",
+   "note": "두 문장의 지시 표현은 서로가 아니라 앞 문장 4의 임계값 0.193을 가리키므로, 순서를 바꿔도 가리키는 대상(0.193)과 주장이 그대로다."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인)"
+ },
+ {
+  "id": "V04",
+  "base": "pima_strong",
+  "axis": "변형",
+  "type": "어휘 치환",
+  "slot": "interpretation.distribution_analysis",
+  "old": "두 클래스 모두 비율 차가 10%p 미만이므로 학습 분포와 평가 분포의 클래스 비율 차이는 뚜렷하지 않다.",
+  "new": "두 클래스 모두 비율 차가 10%p 미만이므로 학습 분포와 평가 분포의 클래스 비율 차이는 두드러지지 않다.",
+  "grounds": {
+   "field": "fact_sheet.facts.distribution_shift[*].flagged",
+   "value": "false (차이 0.002, -0.002)",
+   "note": "'뚜렷하지 않다'를 극성과 강도가 같은 '두드러지지 않다'로 바꾼 것이라 차이가 크지 않다는 판단이 그대로이고 숫자·인과 표현('미만이므로')도 바뀌지 않았다. 어휘 등급 확인: '뚜렷'·'두드러지' 모두 정도 표현 어휘 목록(강한 긍정·긍정 예·부정 예·여유 낱말)에 없다 — 극성(차이 없음)과 등급이 같다."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인)"
+ },
+ {
+  "id": "V05",
+  "base": "segment_weak",
+  "axis": "변형",
+  "type": "연결 어미 교체",
+  "slot": "conclusion.benchmark",
+  "old": "이 기준은 공개 벤치마크 평균이 아니라 자체 설정 기준이며, 도메인별로 상이할 수 있다.",
+  "new": "이 기준은 공개 벤치마크 평균이 아니라 자체 설정 기준이고, 도메인별로 상이할 수 있다.",
+  "grounds": {
+   "field": "서술 conclusion.benchmark 문장 1 (연결 어미만 교체)",
+   "value": "…기준이며, → …기준이고,",
+   "note": "나열 연결 어미 '-이며'를 같은 뜻의 '-이고,'로 바꿨을 뿐이라 주장 내용과 판단은 그대로다."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인)"
+ },
+ {
+  "id": "V06",
+  "base": "segment_weak",
+  "axis": "변형",
+  "type": "숫자 표기 변환",
+  "slot": "interpretation.additional_observations",
+  "old": "반면 sky는 F1 1.000이고 grass와 path는 F1 0.990으로, 이 세 클래스는 F1 0.000인 foliage·window와 큰 차이를 보인다.",
+  "new": "반면 sky는 F1 1.000이고 grass와 path는 F1 99.0%로, 이 세 클래스는 F1 0.000인 foliage·window와 큰 차이를 보인다.",
+  "grounds": {
+   "field": "같은 값의 다른 표기",
+   "value": "0.990 = 99.0%",
+   "note": "0.990 를 같은 값의 백분율 표기 99.0% 로 바꾼 것이라 값과 뜻이 같다(표시 자릿수 유지). 조사는 읽는 법에 맞춰 '으로'를 '로'로 고쳤다."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인) / 자리 옮김: 처음 고른 자리의 백분율 표기가 1차 점검 허용 목록 밖이라 동결 전 확인에서 원본과 결과가 달라 자리를 옮겼다. 선정 규칙(1차 점검 통과·범위 끝값과 0 제외·다른 항목 문장 제외·같은 문장에 같은 종류의 다른 값이 다른 표기로 남는 후보 제외)을 모두 만족하는 자리가 이 결과서에 없어, 마지막 조건을 뺀 규칙의 첫 후보 자리를 쓴다. 이 변형의 불변성은 발급 결정과 차단 축(충실성·일관성) 점수로만 판단한다(사전 등록 v3)."
+ },
+ {
+  "id": "V07",
+  "base": "segment_weak",
+  "axis": "변형",
+  "type": "문장 순서 교체",
+  "slot": "conclusion.risks",
+  "old": "판정 여유는 Accuracy와 F1 Score 모두 충분이므로, 판정이 뒤집힐 수 있다고 해석하지 않는다. 응답 시간은 측정하지 않았으므로 이 절에서 지연에 관한 위험은 평가하지 않았다.",
+  "new": "응답 시간은 측정하지 않았으므로 이 절에서 지연에 관한 위험은 평가하지 않았다. 판정 여유는 Accuracy와 F1 Score 모두 충분이므로, 판정이 뒤집힐 수 있다고 해석하지 않는다.",
+  "grounds": {
+   "field": "서술 conclusion.risks 문장 9·10",
+   "value": "두 문장은 서로를 가리키는 지시어가 없다('이 절'은 8.3절 자체를 가리킴)",
+   "note": "판정 여유에 관한 문장과 응답 시간 미측정에 관한 문장은 서로 독립이라 순서를 바꿔도 각 문장의 뜻과 지시 대상이 그대로다. 앞 문장 8 과도 어느 쪽이 오든 지시 관계가 없다."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인)"
+ },
+ {
+  "id": "V08",
+  "base": "segment_weak",
+  "axis": "변형",
+  "type": "어휘 치환",
+  "slot": "conclusion.narrative",
+  "old": "영역 단위 분류 결과가 분할 단계의 입력이 되므로, 핵심 지표가 목표에 미달한 이번 결과는 이 용도에 쓰기에 분류 품질이 부족함을 뜻한다.",
+  "new": "영역 단위 분류 결과가 분할 단계의 입력이 되므로, 핵심 지표가 목표에 미달한 이번 결과는 이 용도에 쓰기에 분류 품질이 미흡함을 뜻한다.",
+  "grounds": {
+   "field": "서술 conclusion.narrative 문장 16 (평가 어휘만 교체)",
+   "value": "부족함 → 미흡함",
+   "note": "'부족하다'와 '미흡하다'는 둘 다 기준에 못 미친다는 부정 평가이고 강도도 같아 극성과 정도가 바뀌지 않는다. 인과어(…되므로), '목표에 미달한', 판정어는 건드리지 않았다. 어휘 등급 확인: '부족'과 '미흡'은 정도 표현 어휘 목록의 부정 예에 함께 있는 같은 등급이다(강한 표현 아님)."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인)"
+ },
+ {
+  "id": "V09",
+  "base": "scene_strong",
+  "axis": "변형",
+  "type": "연결 어미 교체",
+  "slot": "conclusion.risks",
+  "old": "판정 여유가 작은 지표는 Jaccard Index이며, 이 지표는 목표를 충족했다.",
+  "new": "판정 여유가 작은 지표는 Jaccard Index이고, 이 지표는 목표를 충족했다.",
+  "grounds": {
+   "field": "서술 conclusion.risks 문장 6 (fact_sheet.metrics[5] M17 near_target true, status pass)",
+   "value": "'Jaccard Index이며,' → 'Jaccard Index이고,'",
+   "note": "나열 연결 어미 '-이며'를 같은 뜻의 '-이고'로 바꾼 것뿐이다. 내용·극성·숫자가 모두 같고, '이 지표'는 여전히 같은 문장 안의 Jaccard Index를 가리킨다."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인)"
+ },
+ {
+  "id": "V10",
+  "base": "scene_strong",
+  "axis": "변형",
+  "type": "숫자 표기 변환",
+  "slot": "interpretation.confusion_analysis",
+  "old": "레이블별 혼동행렬을 합친 레이블 칸 7,176칸 중 844칸(11.8%)이 틀렸다.",
+  "new": "레이블별 혼동행렬을 합친 레이블 칸 7,176칸 중 844칸(0.118)이 틀렸다.",
+  "grounds": {
+   "field": "같은 값의 다른 표기",
+   "value": "11.8% = 0.118",
+   "note": "11.8% 를 같은 값의 소수 표기 0.118 로 바꾼 것이라 값과 뜻이 같다(표시 자릿수 유지)."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인) / 자리 옮김: 처음 고른 자리의 백분율 표기가 1차 점검 허용 목록 밖이라 동결 전 확인에서 원본과 결과가 달라 자리를 옮겼다. 선정 규칙을 모두 만족하는 첫 후보 자리다(사전 등록 v3)."
+ },
+ {
+  "id": "V11",
+  "base": "scene_strong",
+  "axis": "변형",
+  "type": "문장 순서 교체",
+  "slot": "recommendations.3.action",
+  "old": "학습 데이터와 출처가 다른 독립 평가 데이터를 추가로 확보하여 같은 방식으로 재평가한다. 학습 클래스 분포를 제공받아 학습과 평가의 분포를 비교한다.",
+  "new": "학습 클래스 분포를 제공받아 학습과 평가의 분포를 비교한다. 학습 데이터와 출처가 다른 독립 평가 데이터를 추가로 확보하여 같은 방식으로 재평가한다.",
+  "grounds": {
+   "field": "서술 recommendations.3.action 문장 0·1",
+   "value": "붙어 있는 두 조치 문장의 순서만 맞바꿈",
+   "note": "두 문장은 서로 독립된 조치다. 하나는 독립 평가 데이터로 재평가하는 것, 다른 하나는 학습 분포를 받아 비교하는 것이다. '이·그·위' 같은 지시어로 서로를 가리키지 않아 순서를 바꿔도 뜻이 같다."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인)"
+ },
+ {
+  "id": "V12",
+  "base": "scene_strong",
+  "axis": "변형",
+  "type": "어휘 치환",
+  "slot": "interpretation.distribution_analysis",
+  "old": "불균형 비율은 1.286이며, 1.5 미만이므로 불균형은 경미하다.",
+  "new": "불균형 비율은 1.286이며, 1.5 미만이므로 불균형은 가벼운 수준이다.",
+  "grounds": {
+   "field": "fact_sheet.imbalance_effect.level",
+   "value": "mild (imbalance_ratio 1.2864)",
+   "note": "'경미하다'를 극성과 강도가 같은 '가벼운 수준이다'로 바꿨다. 불균형이 약하다는 판단, 근거 숫자, 인과 표현('미만이므로')은 그대로다. 같은 칸 문장 6에 남은 '경미하므로'와도 뜻이 어긋나지 않는다. 어휘 등급 확인: '경미'·'가벼운 수준' 모두 정도 표현 어휘 목록에 없다 — 극성(약함)과 등급이 같다."
+  },
+  "expected_axes": [],
+  "allowed_secondary_axes": [],
+  "first_check_pass_by_design": null,
+  "author": "연구진(민서 검토·승인)",
+  "note": "1차 점검 설계: 해당 없음(변형 — 동결 전 확인에서 1차 점검·가독성 결과가 원본과 같음을 확인)"
+ }
+]
