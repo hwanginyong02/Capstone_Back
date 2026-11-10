@@ -42,7 +42,7 @@ Capstone_Front
 └── src/
     ├── App.tsx / routes.ts      # 라우팅 (발급 전 입력 화면은 /app/*, 성적서는 /report/*)
     ├── pages/                   # 얇은 조립자 (단계별 페이지 + report/ + workspaces/)
-    ├── components/              # 도메인별 UI (basic-info, ..., report, workspaces, landing, ui)
+    ├── components/              # 도메인별 UI (basic-info, ..., report, workspaces, ui)
     ├── layout/                  # WorkflowShell(워크플로우 셸) · AppShell(비-워크플로우 셸)
     ├── hooks/                   # useColumnAnalysis · useDataValidation · useReportData · useIssuance · usePrintOnReady ...
     ├── lib/                     # apiBase(apiUrl) · mapping(role 변환) · report(API·factSheet·평가로직)
